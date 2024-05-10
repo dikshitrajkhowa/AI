@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random 8-Puzzle Solver</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="menu">
+            <div class="menu-section">
+                <h2>Generate Puzzles</h2>
+                <button onclick="generatePuzzles()">Generate Puzzles</button>
+                <div>
+                    <input type="radio" id="fixedTarget" name="targetType" value="fixed" checked>
+                    <label for="fixedTarget">Fixed Target</label>
+                    <input type="radio" id="randomTarget" name="targetType" value="random">
+                    <label for="randomTarget">Random Target</label>
+                </div>
+            </div>
+            <div class="menu-section">
+                <h2>Solve Puzzles</h2>
+                <button onclick="solveBFS()">Solve Using BFS</button>
+                <button onclick="solveDFS()">Solve Using DFS</button>
+                <button onclick="solveAStar()">Solve Using A*</button>
+            </div>
+        </div>
+        <div class="content">
+            <div class="puzzle-container">
+                <div class="puzzle-grid">
+                    <h2>Initial State</h2>
+                    <div id="initial-state" class="grid"></div>
+                </div>
+                <div class="puzzle-grid">
+                    <h2>Target State</h2>
+                    <div id="target-state" class="grid"></div>
+                </div>
+            </div>
+			<div id="solution-steps"></div> <!-- Container to display solution steps -->
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="bfs.js"></script>
+</body>
+</html>
